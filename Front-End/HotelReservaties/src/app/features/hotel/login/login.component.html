@@ -1,0 +1,198 @@
+<div
+  class="w-screen h-full bg-loginlg bg-cover flex justify-center items-center"
+>
+  <section
+    class="
+      mx-auto
+      w-3/4
+      h-auto
+      p-6
+      bg-white
+      shadow
+      rounded-lg
+      sm:w-7/12
+      md:w-1/2
+      lg:w-1/3
+      2xl:p-12 2xl:w-1/4
+    "
+  >
+    <form
+      class="pt-1 xl:"
+      #userForm="ngForm"
+      [formGroup]="loginForm"
+      (ngSubmit)="signIn()"
+    >
+      <!-- ICON -->
+      <div class="flex justify-center align-center lg:mb-8 xl:mb-16">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 351.837 394.728"
+          class="w-1/4 h-1/4 hidden lg:w-1/6 lg:block xl:w-1/8"
+        >
+          <g id="mct-howest-logo-vector" transform="translate(-27.48 -102.066)">
+            <g id="MCT" transform="translate(6.314 1.01)">
+              <path
+                id="Path_15"
+                data-name="Path 15"
+                d="M173.213,45.21,95.5,88.074,17.79,45.21v89.609l46.576,26.748a62.186,62.186,0,0,0,62.27,0l46.576-26.832Z"
+                transform="translate(101.583 325.862)"
+                class="fill-blue-400"
+              />
+              <path
+                id="Path_16"
+                data-name="Path 16"
+                d="M327.6,84.36,199.961,6.806a45.922,45.922,0,0,0-48.084,0L24.238,84.36C9.288,93.354.043,110.081,0,128.216V283.461c.043,18.135,9.288,34.862,24.238,43.856l22.218,13.726V136.795a11.034,11.034,0,0,1,5.179-9.491,9.908,9.908,0,0,1,10.393.02l113.891,67.671,113.826-67.671a9.908,9.908,0,0,1,10.393-.02,11.034,11.034,0,0,1,5.179,9.491V340.837l22.218-13.726c14.915-8.94,24.177-25.574,24.3-43.65V128.216c-.043-18.135-9.288-34.862-24.238-43.856Z"
+                transform="translate(21.166 101.046)"
+                class="fill-blue-400"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="flex md:justify-center">
+        <input
+          class="
+            flex
+            pr-2
+            pl-4
+            pt-3
+            pb-2
+            mb-6
+            align-baseline
+            rounded-lg
+            border border-gray-300
+            w-full
+            focus:outline-none
+            focus-visible:ring
+            placeholder-opacity-50
+            text-sm
+            md:w-3/4
+            xl:w-9/12 xl:text-base
+          "
+          type="email"
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+          [ngClass]="{ error: email && email.invalid && email.touched }"
+          [(ngModel)]="userModel.email"
+          name="email"
+        />
+      </div>
+      <div class="flex md:justify-center">
+        <span
+          class="text-red-500 flex md:w-3/4 md: -mt-4 mb-4"
+          *ngIf="email && email.invalid && email.touched"
+          >{{ 'login.notValidEmail' | translate }}</span
+        >
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="flex md:justify-center">
+        <input
+          class="
+            flex
+            pr-2
+            pl-4
+            pt-3
+            pb-2
+            mb-2
+            align-baseline
+            rounded-lg
+            border border-gray-300
+            w-full
+            focus:outline-none
+            focus-visible:ring
+            placeholder-opacity-50
+            text-sm
+            md:w-3/4 md:mb-2
+            xl:w-9/12 xl:text-base
+          "
+          type="password"
+          id="password"
+          placeholder="{{ 'login.password' | translate }}"
+          formControlName="password"
+          [ngClass]="{
+            error: password && password.invalid && password.touched
+          }"
+          [(ngModel)]="userModel.password"
+          name="password"
+        />
+      </div>
+      <div class="flex md:justify-center">
+        <span
+          class="text-red-500 flex md:w-3/4 md: mb-4"
+          *ngIf="password && password.invalid && password.touched"
+          >{{ 'login.notValidPassword' | translate }}</span
+        >
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <div class="flex justify-end md:justify-center">
+        <div class="flex justify-end mb-6 md:w-3/4 xl:w-9/12 xl:mb-12">
+          <button
+            class="text-xs text-blue-500 xl:text-sm"
+            href=""
+            routerLink="/forgotPassword"
+          >
+            {{ 'login.forgot' | translate }}
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="message" class="flex justify-center mb-4">
+        <p class="text-red-500">{{ message }}</p>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="flex md:justify-center">
+        <div class="bg-blue-700 rounded-xl w-full md:w-1/2 lg:w-2/3 xl:w-1/2">
+          <!-- LOGIN -->
+          <button
+            class="
+              bg-blue-400
+              text-white
+              rounded-xl
+              pt-2.5
+              pb-2
+              w-1/2
+              focus:outline-none
+              focus-visible:ring
+              font-semibold
+              text-sm
+              hover:bg-blue-500
+              active:bg-blue-600
+              xl:pt-3.5 xl:pb-3 xl:text-base
+            "
+            type="submit"
+          >
+            {{ 'login.signin' | translate }}
+          </button>
+
+          <!-- REGISTER -->
+          <button
+            class="
+              bg-blue-700
+              text-white
+              rounded-xl
+              w-1/2
+              pt-2.5
+              pb-2
+              focus:outline-none
+              focus-visible:ring
+              text-sm
+              font-semibold
+              hover:bg-blue-800
+              active:bg-blue-900
+              xl:pt-3.5 xl:pb-3 xl:text-base
+            "
+            routerLink="/register"
+          >
+            {{ 'login.register' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

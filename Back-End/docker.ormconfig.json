@@ -1,0 +1,26 @@
+[{
+    "name":"default",
+    "type":"mariadb",
+    "host":"mariadb",
+    "port":3306,
+    "username":"HotelHowest",
+    "password":"FrameworksIsCool25",
+    "database":"HotelReservaties",
+    "synchronize":true,
+    "logging":false,
+    "entities":["/usr/app/entity/mariaDB/**/*.js"]
+},{
+    "name":"connection2",
+    "type":"mongodb",
+    "connection":"mongodb",
+    "username":"root",
+    "password":"stronger_password",
+    "host":"mongodb",
+    "database":"admin",
+    "port":27017,
+    "synchronize":true,
+    "logging":false,
+    "entities":["/usr/app/entity/mongoDB/**/*.js"],
+    "useUnifiedTopology":true,
+    "useNewUrlParser":true
+}]

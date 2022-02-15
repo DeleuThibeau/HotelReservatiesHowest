@@ -1,0 +1,28 @@
+{  
+    "home": {  
+        "sub-title": "Where dreams die",  
+        "adults.label": "Adults",  
+        "kids.label": "Kids",  
+        "button.name": "Search"
+    },
+    "header": {  
+        "rooms": "Rooms",  
+        "about": "About"  
+    },
+    "login": {  
+        "password": "Password",  
+        "forgot": "Forgot your password?",
+        "signin": "Sign In",
+        "register": "Register",
+        "notValidEmail": "this email is not valid",
+        "notValidPassword": "this password is not valid" 
+    },
+    "register": { 
+        "name": "Name", 
+        "password": "Password",  
+        "goBack": "Go Back",
+        "register": "Register",
+        "notValidEmail": "this email is not valid",
+        "notValidPassword": "this password is not valid"   
+    }            
+}   

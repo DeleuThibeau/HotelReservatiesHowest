@@ -1,0 +1,372 @@
+<app-container>
+  <body
+    class="
+      grid grid-cols-2
+      md:w-4/5 md:m-auto
+      lg:w-4/5
+      xl:w-3/5
+      2xl:w-full 2xl:grid-cols-10
+      3xl:w-4/5
+      2xl:mt-24
+    "
+  >
+    <!-- User -->
+    <section
+      class="
+        rows-start-1
+        col-span-2
+        justify-self
+        mb-6
+        md:mb-8
+        2xl:col-start-1 2xl:col-end-5
+        lg:mb-12
+        xl:mb-16 xl:col-start-1 xl:row-start-1
+        2xl:mb-0
+      "
+    >
+      <div class="flex flex-col">
+        <img
+          class="
+            mb-4
+            m-0
+            rounded-3xl
+            self-center
+            sm:h-1/2 sm:w-1/2
+            xl:h-72 xl:w-72
+            3xl:w-96 3xl:h-96
+          "
+          src="{{ user.image }}"
+        />
+        <div class="self-center md:text-md lg:text-lg xl:text-xl">
+          {{ user.name }}
+        </div>
+
+        <div
+          class="
+            self-center
+            text-xs
+            opacity-50
+            md:text-sm
+            lg:text-md
+            xl:text-lg
+          "
+        >
+          User
+        </div>
+      </div>
+    </section>
+
+    <!-- Blue Bookings card -->
+    <section
+      class="
+        col-start-1
+        row-start-2
+        mb-6
+        2xl:col-start-5 2xl:col-end-7 2xl:row-start-1
+      "
+    >
+      <div
+        class="
+          self-center
+          flex flex-col
+          w-28
+          h-28
+          bg-blue-300
+          rounded-xl
+          px-1
+          py-1
+          justify-evenly
+          sm:h-48 sm:w-48
+          md:h-56 md:w-56
+          lg:h-72 lg:w-72
+          3xl:h-96 3xl:w-96
+        "
+      >
+        <div
+          class="
+            text-center text-sm
+            font-semibold
+            text-blue-900
+            sm:text-lg
+            md:text-lg
+            lg:text-xxl
+          "
+        >
+          Bookings
+        </div>
+        <div
+          class="
+            text-center text-lg
+            font-semibold
+            text-blue-900
+            sm:text-xxl
+            lg:text-xxxl
+          "
+        >
+          {{ bookings.length }}
+        </div>
+        <div
+          class="
+            text-center text-xxs text-blue-900
+            sm:text-xs
+            md:text-sm
+            lg:text-lg
+          "
+        ></div>
+      </div>
+    </section>
+
+    <!-- Bookings list -->
+    <section
+      class="
+        2xl:col-start-5 2xl:col-end-7
+        row-start-3
+        col-span-2
+        w-full
+        h-full
+        mb-12
+        2xl:w-72 2xl:row-start-2
+        3xl:w-96
+      "
+    >
+      <div class="flex justify-center">
+        <div class="w-full">
+          <p class="text-md font-medium md:text-lg 3xl:text-xl mb-2 2xl:mb-4">
+            My Bookings
+          </p>
+          <div *ngFor="let booking of bookings">
+            <div
+              class="
+                w-full
+                h-9/10
+                border-2 border-blue-300
+                bg-blue-100
+                rounded-xl
+                px-3
+                py-1
+                flex
+                lg:px-6 lg-py3 lg:h-1/10
+                mb-3
+              "
+            >
+              <div class="flex flex-col w-1/2 justify-start">
+                <div class="text-xs">{{ booking.room!.name }}</div>
+                <div class="text-xs">
+                  {{ booking.checkIn }} - {{ booking.checkOut }}
+                </div>
+              </div>
+              <div class="flex flex-col w-1/2 justify-end">
+                <div class="text-xs text-right">
+                  {{ booking.adults }} adults
+                </div>
+                <div class="text-xs text-right">{{ booking.kids }} kids</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pink Reviews card -->
+    <section
+      class="
+        col-start-2
+        row-start-2
+        mb-6
+        2xl:col-start-8 2xl:col-end-10 2xl:row-start-1
+        justify-self-end
+      "
+    >
+      <div
+        class="
+          self-center
+          flex flex-col
+          w-28
+          h-28
+          bg-pink-300
+          rounded-xl
+          px-1
+          py-1
+          justify-evenly
+          sm:h-48 sm:w-48
+          md:h-56 md:w-56
+          lg:h-72 lg:w-72
+          3xl:h-96 3xl:w-96
+        "
+      >
+        <div
+          class="
+            text-center text-sm
+            font-semibold
+            text-pink-900
+            sm:text-lg
+            md:text-lg
+            lg:text-xxl
+          "
+        >
+          Reviews
+        </div>
+        <div
+          class="
+            text-center text-lg
+            font-semibold
+            text-pink-900
+            sm:text-xxl
+            lg:text-xxxl
+          "
+        >
+          {{ reviews.length }}
+        </div>
+        <div
+          class="
+            text-center text-xxs text-pink-900
+            sm:text-xs
+            md:text-sm
+            lg:text-lg
+          "
+        >
+          Last review at {{ latestCreated }}
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews list -->
+    <section
+      class="
+        col-span-2
+        row-start-4
+        w-full
+        h-full
+        mb-12
+        2xl:col-start-8
+        2xl:col-end-10
+        2xl:w-72
+        2xl:row-start-2
+        2xl:justify-self-end
+        3xl:w-96
+      "
+    >
+      <div class="flex justify-center">
+        <div class="w-full">
+          <p class="text-md font-medium md:text-lg 3xl:text-xl mb-2 2xl:mb-4">
+            My Reviews
+          </p>
+          <div *ngFor="let review of reviews">
+            <div
+              class="
+                w-full
+                h-3/4
+                2xl:h-2/3
+                border-2 border-pink-300
+                bg-pink-100
+                rounded-xl
+                px-3
+                py-1
+                flex
+                md:text-lg
+                2xl:pb-2 2xl:px-5
+                relative
+              "
+            >
+              <div class="flex flex-col w-full justify-start">
+                <div class="flex">
+                  <ul class="inline-block" *ngFor="let star of stars">
+                    <li class="inline-block -mt-0.5">
+                      <span
+                        class="text-xl text-black-700"
+                        [ngClass]="{
+                          'text-pink-700': star <= review.starRating!
+                        }"
+                        >&starf;</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="text-xs w-full">{{ review.comment }}</div>
+                <div class="text-xs w-1/2">
+                  {{ getRoomName(review.roomId!) }}
+                </div>
+              </div>
+              <div
+                class="flex flex-col w-full justify-end absolute right-5 mt-14"
+              >
+                <div class="text-xs w-full text-right">
+                  Posted {{ review.createdAt }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logout button -->
+    <section
+      class="
+        row-start-5
+        col-span-2
+        flex
+        justify-center
+        2xl:row-start-2 2xl:col-start-1 2xl:col-end-5 2xl:self-start
+      "
+    >
+      <button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="66"
+          height="66"
+          viewBox="0 0 66 66"
+          class="self-center"
+          (click)="logout()"
+        >
+          <defs>
+            <filter
+              id="Rectangle_6"
+              x="0"
+              y="0"
+              width="66"
+              height="66"
+              filterUnits="userSpaceOnUse"
+            >
+              <feOffset dy="2" input="SourceAlpha" />
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feFlood flood-color="#fff" flood-opacity="0.161" />
+              <feComposite operator="in" in2="blur" />
+              <feComposite in="SourceGraphic" />
+            </filter>
+          </defs>
+          <g
+            id="Group_34"
+            data-name="Group 34"
+            transform="translate(-155 -716)"
+          >
+            <g id="SearchButton" transform="translate(-1127 557)">
+              <g
+                transform="matrix(1, 0, 0, 1, 1282, 159)"
+                filter="url(#Rectangle_6)"
+              >
+                <rect
+                  id="Rectangle_6-2"
+                  data-name="Rectangle 6"
+                  width="48"
+                  height="48"
+                  rx="24"
+                  transform="translate(9 7)"
+                  fill="#073959"
+                />
+              </g>
+            </g>
+            <path
+              id="Icon_open-account-logout"
+              data-name="Icon open-account-logout"
+              d="M8.566,0V2.513H19.987V15.078H8.566v2.513H22.843V0ZM5.711,5.026,0,8.8l5.711,3.77V10.052H17.132V7.539H5.711Z"
+              transform="translate(174.079 738.25)"
+              fill="#fffaf2"
+            />
+          </g>
+        </svg>
+      </button>
+    </section>
+  </body>
+</app-container>

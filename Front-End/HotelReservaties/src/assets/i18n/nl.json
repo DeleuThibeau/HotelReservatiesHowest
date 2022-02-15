@@ -1,0 +1,28 @@
+{  
+    "home": {  
+        "sub-title": "Beste Hotel in het Westen",  
+        "adults.label": "Volwassenen",  
+        "kids.label": "Kinderen",  
+        "button.name": "Zoeken"
+    },
+    "header": {  
+        "rooms": "Kamers",  
+        "about": "Meer Info"  
+    },
+    "login": {  
+        "password": "Paswoord",  
+        "forgot": "Uw paswoord vergeten?",
+        "signin": "Log in",
+        "register": "Registreren",
+        "notValidEmail": "Dit is geen geldige email",
+        "notValidPassword": "Dit is geen geldig paswoord" 
+    },
+    "register": {  
+        "name": "Naam",
+        "password": "Paswoord",  
+        "goBack": "Ga Terug",
+        "register": "Registreren",
+        "notValidEmail": "Dit is geen geldige email",
+        "notValidPassword": "Dit is geen geldig paswoord"  
+    }             
+}   

@@ -1,0 +1,27 @@
+{
+  "name": "@vanhouttetibo/hotelreservaties-socketio",
+  "repository": "git://github.com/VanHoutteTibo/HotelReservaties.git",
+  "version": "1.0.0",
+  "description": "Socketio microservice for hotel project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node dist/app.js",
+    "dev": "npx nodemon --watch 'server/**/*' --exec 'ts-node' server/app.ts",
+    "build": "tsc -p ."
+  },
+  "author": "Thibeau Deleu & Tibo van Houtte",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "eslint": "^8.2.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "socket.io": "^4.3.2"
+  }
+}

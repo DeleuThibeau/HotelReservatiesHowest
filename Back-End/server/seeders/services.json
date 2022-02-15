@@ -1,0 +1,27 @@
+[
+    {
+        "uuid": "c2b507bb-a3e1-4ef6-ad60-1a01b99c0f1b",
+        "name": "Shower",
+        "icon": "shower.svg"
+    },
+    {
+        "uuid": "ea1dc895-f43b-400f-b3d8-07593100c39d",
+        "name": "Wifi",
+        "icon": "wifi.svg"
+    },
+    {
+        "uuid": "f1ec3b0f-5e81-4a44-b57d-07201531bf6b",
+        "name": "Breakfast",
+        "icon": "breakfast.svg"
+    },
+    {
+        "uuid": "23cf3a84-59b6-11ec-bf63-0242ac130002",
+        "name": "Mini-Bar",
+        "icon": "miniBar.svg"
+    },
+    {
+        "uuid": "136615b4-59b6-11ec-bf63-0242ac130002",
+        "name": "AirConditioning",
+        "icon": "airconditioning.svg"
+    }
+]

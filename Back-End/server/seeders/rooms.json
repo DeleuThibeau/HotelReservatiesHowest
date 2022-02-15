@@ -1,0 +1,77 @@
+[
+    {
+        "uuid": "34689d78-8b01-4172-9c4a-d7cf0bd4bdd2",
+        "name": "Single",
+        "price": 60,
+        "description": "A room for only one individual",
+        "bedType": "Single",
+        "maxGuest": {
+            "adults": 1,
+            "kids": 0
+        },
+        "bookingNights": 4,
+        "area": 12,
+        "image": "room1.png",
+        "bookedDates": []
+    },
+    {
+        "uuid": "68cebd18-771e-4bf4-94c3-65fdf0a59cc5",
+        "name": "Suite dreams",
+        "price": 110,
+        "description": "Suite dreams are coming true right here!",
+        "bedType": "Double",
+        "maxGuest": {
+            "adults": 2,
+            "kids": 3
+        },
+        "bookingNights": 2,
+        "area": 20,
+        "image": "room1.png",
+        "bookedDates": []
+    },
+    {
+        "uuid": "808dd121-1c65-4458-a3f0-f4e66dbec1af",
+        "name": "Room Deluxe",
+        "price": 140,
+        "description": "Who needs normal when you can live in style!",
+        "bedType": "KingSize",
+        "maxGuest": {
+            "adults": 3,
+            "kids": 3
+        },
+        "bookingNights": 1,
+        "area": 20,
+        "image": "room2.png",
+        "bookedDates": []
+    },
+    {
+        "uuid": "8f6b150c-057e-407e-ac97-dababeff5e72",
+        "name": "Double",
+        "price": 80,
+        "description": "For the couples among us ;)",
+        "bedType": "Double",
+        "maxGuest": {
+            "adults": 2,
+            "kids": 2
+        },
+        "bookingNights": 3,
+        "area": 18,
+        "image": "room2.png",
+        "bookedDates": []
+    },
+    {
+        "uuid": "c22a903d-1433-4568-b401-777165c6418d",
+        "name": "Penthouse",
+        "price": 220,
+        "description": "Only the best for the best!",
+        "bedType": "KingSize",
+        "maxGuest": {
+            "adults": 6,
+            "kids": 6
+        },
+        "bookingNights": 1,
+        "area": 40,
+        "image": "room2.png",
+        "bookedDates": []
+    }
+]

@@ -1,0 +1,211 @@
+<div class="bg-black-900 w-full opacity-50 relative"></div>
+<section class="absolute z-10 w-full h-full flex justify-center items-center">
+  <div class="absolute z-20 w-full h-full bg-black-900 opacity-50"></div>
+  <div
+    class="
+      absolute
+      z-30
+      bg-opacity-100 bg-black-100
+      rounded-xl
+      px-4
+      py-6
+      h-3/4
+      w-3/4
+      flex flex-col
+      justify-evenly
+      opacity-100
+      md:px-16 md:w-1/2 md:h-1/2
+      3xl:px-32 3xl:py-16 3xl:w-1/2
+      2xl:h-1/3
+    "
+  >
+    <div
+      class="
+        h-5/6
+        md:w-full md:flex md:flex-col
+        2xl:flex-row 2xl:flex 2xl:justify-between
+      "
+    >
+      <!-- Reviews -->
+      <section
+        class="
+          2xl:col-start-5 2xl:col-end-7
+          w-full
+          mb-4
+          2xl:w-72 2xl:row-start-2
+          3xl:w-96
+        "
+      >
+        <div class="flex justify-center">
+          <div class="w-full flex flex-col">
+            <p
+              class="
+                text-md
+                font-medium
+                self-center
+                md:text-lg
+                mb-2
+                2xl:text-xxl 2xl:mb-8
+              "
+            >
+              Reviews
+            </p>
+            <div
+              class="
+                w-full
+                h-9/10
+                rounded-xl
+                px-3
+                py-1
+                flex
+                lg:px-6 lg-py3 lg:h-1/10
+              "
+            >
+              <div class="flex flex-col w-1/2 justify-start">
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Average rating
+                </div>
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Amount
+                </div>
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Last review
+                </div>
+              </div>
+              <div class="flex flex-col w-1/2 justify-end">
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ getAverageStarRating() }}
+                </div>
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ overlayContent.reviews!.length }}
+                </div>
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ getLatestCreated() }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bookings -->
+      <section
+        class="
+          2xl:col-start-5 2xl:col-end-7
+          w-full
+          mb-4
+          2xl:w-72 2xl:row-start-2
+          3xl:w-96
+        "
+      >
+        <div class="flex justify-center">
+          <div class="w-full flex flex-col">
+            <p
+              class="
+                text-md
+                font-medium
+                self-center
+                md:text-lg
+                mb-2
+                2xl:text-xxl 2xl:mb-8
+              "
+            >
+              Bookings
+            </p>
+            <div
+              class="
+                w-full
+                h-9/10
+                rounded-xl
+                px-3
+                py-1
+                flex
+                lg:px-6 lg-py3 lg:h-1/10
+              "
+            >
+              <div class="flex flex-col w-1/2 justify-start">
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Most used room
+                </div>
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Amount
+                </div>
+                <div class="text-xs md:text-base md:mb-2 2xl:text-lg 2xl:mb-4">
+                  Average number of people per room
+                </div>
+              </div>
+              <div class="flex flex-col w-1/2 justify-end">
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ getMostFrequentRoom() }}
+                </div>
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ overlayContent.bookings!.length }}
+                </div>
+                <div
+                  class="
+                    text-xs text-right
+                    md:text-base md:mb-2
+                    2xl:text-lg 2xl:mb-4
+                  "
+                >
+                  {{ getAveragePeople() }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="h-auto flex justify-center content-center 3xl:h-auto">
+      <button
+        class="text-black-1000 h-1/4 3xl:h-1/8 3xl:h-1/2"
+        (click)="close()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="fill-blue-400"
+        >
+          <path
+            id="Icon_ionic-md-close"
+            data-name="Icon ionic-md-close"
+            d="M31.523,9.923l-2.4-2.4-9.6,9.6-9.6-9.6-2.4,2.4,9.6,9.6-9.6,9.6,2.4,2.4,9.6-9.6,9.6,9.6,2.4-2.4-9.6-9.6Z"
+            transform="translate(-7.523 -7.523)"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

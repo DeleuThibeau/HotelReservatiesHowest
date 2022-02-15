@@ -1,0 +1,182 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://use.typekit.net/qnw7bbv.css');
+/* You can add global styles to this file, and also import other style files */
+
+@layer utilities {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='date']::-webkit-inner-spin-button,
+  input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+  ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+  ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+  }
+}
+
+.not-available {
+  background: #ffc2bb;
+  color: #ba1200;
+  border-radius: 100%;
+}
+
+.available {
+  background: #caedfc;
+  color: #01577d;
+  border-radius: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+#loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#loading-text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 49.8%;
+  color: rgb(8, 8, 8);
+  width: 100px;
+  height: auto;
+  margin: -7px 0 0 -45px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+#loading-content {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 170px;
+  height: 170px;
+  margin: -85px 0 0 -85px;
+  border: 3px solid #f00;
+}
+
+#loading-content:after {
+  content: '';
+  position: absolute;
+  border: 3px solid #0f0;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  bottom: 15px;
+}
+
+#loading-content:before {
+  content: '';
+  position: absolute;
+  border: 3px solid #00f;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+}
+
+#loading-content {
+  border: 3px solid transparent;
+  border-top-color: #019ee3;
+  border-bottom-color: #019ee3;
+  border-radius: 50%;
+  -webkit-animation: loader 2s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 2s linear infinite;
+}
+
+#loading-content:before {
+  border: 3px solid transparent;
+  border-top-color: #baaf9f;
+  border-bottom-color: #baaf9f;
+  border-radius: 50%;
+  -webkit-animation: loader 3s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 3s linear infinite;
+}
+
+#loading-content:after {
+  border: 3px solid transparent;
+  border-top-color: #ed422f;
+  border-bottom-color: #ed422f;
+  border-radius: 50%;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+}
+
+@-webkit-keyframes loaders {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#content-wrapper {
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100px;
+  background-color: #666;
+}
+
+#content {
+  width: 800px;
+  height: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #888;
+}

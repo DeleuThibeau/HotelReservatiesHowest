@@ -1,0 +1,28 @@
+[
+    {
+        "name":"Shower",
+        "room":  "8f6b150c-057e-407e-ac97-dababeff5e72",
+        "service": "c2b507bb-a3e1-4ef6-ad60-1a01b99c0f1b" 
+    },
+    {
+        "name":"Wifi",
+        "room":  "34689d78-8b01-4172-9c4a-d7cf0bd4bdd2",
+        "service": "ea1dc895-f43b-400f-b3d8-07593100c39d" 
+    },
+    {
+        "name":"Breakfast",
+        "room":  "c22a903d-1433-4568-b401-777165c6418d",
+        "service": "f1ec3b0f-5e81-4a44-b57d-07201531bf6b" 
+    },
+    {
+        "name":"Minibar",
+        "room":  "808dd121-1c65-4458-a3f0-f4e66dbec1af",
+        "service": "23cf3a84-59b6-11ec-bf63-0242ac130002" 
+    },
+    {
+        "name":"AirConditioning",
+        "room":  "68cebd18-771e-4bf4-94c3-65fdf0a59cc5",
+        "service": "136615b4-59b6-11ec-bf63-0242ac130002" 
+    }
+
+]

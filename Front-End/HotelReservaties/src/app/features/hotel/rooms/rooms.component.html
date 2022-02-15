@@ -1,0 +1,693 @@
+<div class="2xl:mb-16">
+  <img class="w-full" src="assets/images/rooms/roomsHeaderImage.png" />
+</div>
+
+<app-container>
+  <div *ngIf="currentWindowWidth >= 1150">
+    <div
+      class="
+        2xl:mx-72
+        xl:mx-24
+        mx-36
+        pb-12
+        flex
+        justify-between
+        flex-col
+        lg:flex-row
+        align-middle
+        px-11
+        border-b-2 border-black-700
+      "
+    >
+      <div class="my-auto mx-3 flex-2">
+        <label for="checkin" class="text-lg mb-2 font-light text-blue-1000"
+          >Check In</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkin"
+            #checkIn
+            matInput
+            [matDatepicker]="pickerIn"
+            (click)="pickerIn.open()"
+            class="w-1/6 p-2 outline-none flex-1"
+            type="text"
+            (dateChange)="dateChanged()"
+            readonly
+          />
+
+          <mat-datepicker-toggle matSuffix [for]="pickerIn" class="">
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerIn></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-3 flex-2">
+        <label for="checkout" class="text-lg mb-2 font-light text-blue-1000"
+          >Check Out</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkout"
+            #checkOut
+            matInput
+            [matDatepicker]="pickerOut"
+            (click)="pickerOut.open()"
+            class="w-1/6 p-2 outline-none flex-1"
+            type="text"
+            readonly
+          />
+
+          <mat-datepicker-toggle matSuffix [for]="pickerOut" class="">
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerOut></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-3 flex-1">
+        <label for="adult" class="text-lg mb-2 font-light text-blue-1000"
+          >Adults</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="adult"
+            #adult
+            value="1"
+            class="h-7 w-12 p-2 outline-none flex-1"
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('adult')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('adult')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-3 flex-1">
+        <label for="kid" class="text-lg mb-2 font-light text-blue-1000"
+          >Kids</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="kid"
+            #kid
+            value="0"
+            class="h-7 w-12 p-2 outline-none flex-1"
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('kid')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('kid')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-3 flex-1">
+        <button
+          (click)="searchRooms()"
+          class="
+            rounded-full
+            bg-blue-1000
+            text-black-100 text-base
+            font-bold
+            py-3
+            px-14
+          "
+        >
+          Search
+        </button>
+        <div class="mt-2">
+          <span class="text-red-500 mt-2 text-center" *ngIf="errorMsg != ''">{{
+            errorMsg
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex align-middle flex-col">
+      <div *ngIf="availableRooms.length == 0" class="mx-auto mt-10">
+        No available rooms for these dates
+      </div>
+      <ng-container *ngFor="let singleRoom of availableRooms">
+        <div class="flex mx-auto my-5 border border-black-700">
+          <img src="{{ 'assets/images/rooms/' + singleRoom.image }}" alt="" />
+          <div class="w-48 mx-5">
+            <h1 class="text-left text-blue-1000 text-lg font-bold mt-3">
+              {{ singleRoom.name }}
+            </h1>
+            <p class="text-left text-black-1000 text-sm font-light">
+              {{ singleRoom.description }}
+            </p>
+
+            <div class="flex mt-3">
+              <ng-container *ngFor="let service of singleRoom.roomServices">
+                <div class="border border-black-700 rounded-md px-3 py-1">
+                  <img
+                    src="{{ 'assets/images/rooms/' + service.name + '.svg' }}"
+                    alt=""
+                    class=""
+                  />
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="self-center mx-5">
+            <div class="flex flex-col align-middle mt-3">
+              <p class="mx-auto text-blue-1000 text-lg font-bold">
+                €{{ singleRoom.price }}
+              </p>
+              <p class="mx-auto text-sm font-light text-black-700">PER NIGHT</p>
+              <button
+                class="pt-5 flex mx-auto align-middle"
+                (click)="getLink(singleRoom.name!)"
+              >
+                <p>More Details</p>
+                <img
+                  class="self-center px-2"
+                  src="assets/images/rooms/arrow-right.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div *ngIf="currentWindowWidth < 1150">
+    <div
+      class="
+        mx-8
+        sm:mx-16
+        md:mx-36
+        pb-12
+        flex
+        justify-between
+        flex-col
+        align-middle
+        px-11
+        border-b-2 border-black-700
+        space-y-4
+      "
+    >
+      <div class="my-auto mx-auto flex-2">
+        <label for="checkin" class="text-lg mb-2 font-light text-blue-1000"
+          >Check In</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkin"
+            #checkIn
+            matInput
+            [matDatepicker]="pickerIn"
+            (click)="pickerIn.open()"
+            class="w-1/6 p-2 outline-none flex-1"
+            type="text"
+            (dateChange)="dateChanged()"
+            readonly
+          />
+
+          <mat-datepicker-toggle matSuffix [for]="pickerIn" class="">
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerIn></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-auto flex-2">
+        <label for="checkout" class="text-lg mb-2 font-light text-blue-1000"
+          >Check Out</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkout"
+            #checkOut
+            matInput
+            [matDatepicker]="pickerOut"
+            (click)="pickerOut.open()"
+            class="w-1/6 p-2 outline-none flex-1"
+            type="text"
+            readonly
+          />
+
+          <mat-datepicker-toggle matSuffix [for]="pickerOut" class="">
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerOut></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-auto flex-1">
+        <label for="adult" class="text-lg mb-2 font-light text-blue-1000"
+          >Adults</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="adult"
+            #adult
+            value="1"
+            class="h-7 w-12 p-2 outline-none flex-1"
+            type="text"
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('adult')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('adult')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-auto flex-1">
+        <label for="kid" class="text-lg mb-2 font-light text-blue-1000"
+          >Kids</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="kid"
+            #kid
+            value="0"
+            class="h-7 w-12 p-2 outline-none flex-1"
+            type="text"
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('kid')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('kid')" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-auto flex-1">
+        <button
+          (click)="searchRooms()"
+          class="
+            rounded-full
+            bg-blue-1000
+            text-black-100 text-base
+            font-bold
+            py-3
+            px-14
+          "
+        >
+          Search
+        </button>
+        <div class="mt-2">
+          <span class="text-red-500 mt-2 text-center" *ngIf="errorMsg != ''">{{
+            errorMsg
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex align-middle flex-col">
+      <div *ngIf="availableRooms.length == 0" class="mx-auto mt-10">
+        No available rooms for these dates
+      </div>
+      <ng-container *ngFor="let singleRoom of availableRooms">
+        <div class="mx-auto my-5 border border-black-700">
+          <img src="{{ 'assets/images/rooms/' + singleRoom.image }}" alt="" />
+          <div class="mx-5 mb-5">
+            <h1 class="text-left text-blue-1000 text-lg font-bold mt-3">
+              {{ singleRoom.name }}
+            </h1>
+            <p class="text-left text-black-1000 text-sm font-light">
+              {{ singleRoom.description }}
+            </p>
+            <div class="flex mt-3">
+              <ng-container *ngFor="let service of singleRoom.roomServices">
+                <div class="border border-black-700 rounded-md px-3 py-1">
+                  <img
+                    src="{{ 'assets/images/rooms/' + service.name + '.svg' }}"
+                    alt=""
+                    class=""
+                  />
+                </div>
+              </ng-container>
+            </div>
+            <div class="flex flex-col align-middle mt-3">
+              <p class="mx-auto text-blue-1000 text-lg font-bold">
+                €{{ singleRoom.price }}
+              </p>
+              <p class="mx-auto text-sm font-light text-black-700">PER NIGHT</p>
+              <button
+                (click)="getLink(singleRoom.name!)"
+                class="pt-5 flex mx-auto align-middle"
+              >
+                <p>More Details</p>
+                <img
+                  class="self-center px-2"
+                  src="assets/images/rooms/arrow-right.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</app-container>

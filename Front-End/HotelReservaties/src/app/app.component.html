@@ -1,0 +1,22 @@
+<mat-sidenav-container class="h-screen min-w-screen font-Acumin-Pro">
+  <mat-sidenav #sidenav>
+    <app-sidenav-list
+      (SideNavigationToggle)="sidenav.toggle()"
+    ></app-sidenav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="flex flex-col justify-between h-screen overflow-x-hidden">
+      <div class="">
+        <app-header
+          class=""
+          (SideNavigationToggle)="sidenav.toggle()"
+        ></app-header>
+      </div>
+
+      <main class="h-full">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,29 @@
+[
+    {
+        "name":"Howest",
+        "email":"Admin@hotmail.be",
+        "password": "4dminHotelHowest2021",
+        "firstName":"Kortrijk",
+        "age":32,
+        "type": "admin",
+        "image":"https://pbs.twimg.com/profile_images/1411953756598685696/fAI6LvPC_400x400.jpg"
+    },
+    {
+        "name":"Deleu",
+        "email":"thibeau.deleu@hotmail.com",
+        "password": "VromanLaboranteHowest1996",
+        "firstName":"Thibeau",
+        "age":25,
+        "type": "user",
+        "image":"https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/206908838_2900439140219129_947969570121488894_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=M9ffSHqplucAX9WX8kU&_nc_ht=scontent-bru2-1.xx&oh=8b7a18716855986902fb504a25c6cdb7&oe=61D3EFE7"
+    },
+    {
+        "name":"van Houtte",
+        "email":"tibo.van.houtte@hotmail.be",
+        "password": "Vanh0utteh0westk0rtrijk",
+        "firstName":"Tibo",
+        "age":23,
+        "type": "user",
+        "image":"https://scontent-bru2-1.xx.fbcdn.net/v/t1.18169-9/21616507_1700806489952123_6543563306929596955_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=c_THcZHeWxIAX9hNqfX&_nc_ht=scontent-bru2-1.xx&oh=ccd011d23e62bddc632491ba9cf12bc0&oe=61D37029"
+    }
+]

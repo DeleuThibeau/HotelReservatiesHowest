@@ -1,0 +1,642 @@
+<div class="w-screen h-full bg-mainlg bg-cover">
+  <div
+    class="flex justify-between flex-col align-middle min-h-full"
+    *ngIf="currentWindowWidth >= 1150"
+  >
+    <div class="inline-block text-center 2xl:mt-40 mt-28">
+      <h1 class="text-xxxl font-bold mb-8 text-black-100">Hotel Howest</h1>
+      <h2 class="text-xxl text-black-100">
+        {{ 'home.sub-title' | translate }}
+      </h2>
+    </div>
+    <div
+      class="
+        2xl:mx-72
+        xl:mx-40
+        mx-36
+        h-32
+        mb-24
+        bg-black-100
+        rounded-3xl
+        flex
+        justify-between
+        flex-row
+        align-middle
+        px-11
+      "
+    >
+      <div class="my-auto">
+        <label for="checkin" class="text-lg mb-2 font-light text-blue-1000"
+          >Check In</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkin"
+            #checkIn
+            matInput
+            (click)="pickerIn.open()"
+            [matDatepicker]="pickerIn"
+            class="w-36 p-2 bg-black-100 outline-none flex-1"
+            type="text"
+            (dateChange)="dateChanged()"
+            readonly
+          />
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="pickerIn"
+            class="bg-black-100"
+          >
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerIn></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto">
+        <label for="checkout" class="text-lg mb-2 font-light text-blue-1000"
+          >Check Out</label
+        >
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkout"
+            #checkOut
+            matInput
+            (click)="pickerOut.open()"
+            [matDatepicker]="pickerOut"
+            class="w-36 p-2 bg-black-100 outline-none flex-1"
+            type="text"
+            readonly
+          />
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="pickerOut"
+            class="bg-black-100"
+          >
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerOut></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto">
+        <label for="adult" class="text-lg mb-2 font-light text-blue-1000">
+          {{ 'home.adults.label' | translate }}
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="adult"
+            #adult
+            value="1"
+            class="
+              h-7
+              w-20
+              p-2
+              bg-black-100
+              outline-none
+              flex-1
+              appearance-none
+            "
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('adult')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('adult')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto">
+        <label for="kid" class="text-lg mb-2 font-light text-blue-1000">
+          {{ 'home.kids.label' | translate }}
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="kid"
+            #kid
+            value="0"
+            class="h-7 w-20 p-2 bg-black-100 outline-none flex-1"
+            type="number"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('kid')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('kid')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto flex flex-col">
+        <a class="mx-auto" (click)="getLink()">
+          <button
+            class="
+              rounded-full
+              bg-blue-1000
+              text-black-100 text-base
+              font-bold
+              py-3
+              px-14
+            "
+          >
+            {{ 'home.button.name' | translate }}
+          </button>
+        </a>
+        <span class="text-red-500 mt-2 text-center" *ngIf="errorMsg != ''">{{
+          errorMsg
+        }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex justify-start flex-col align-middle max-h-full"
+    *ngIf="currentWindowWidth < 1150"
+  >
+    <div class="inline-block text-center 2xl:mt-40 mt-14">
+      <h1 class="text-5xl font-bold mb-8 text-black-100">Hotel Howest</h1>
+    </div>
+    <div
+      class="
+        mx-auto
+        py-5
+        bg-black-100
+        rounded-3xl
+        flex
+        justify-start
+        flex-col
+        space-y-5
+        align-middle
+        px-11
+      "
+    >
+      <div class="my-auto mx-auto">
+        <label
+          for="checkin"
+          class="text-lg mb-2 font-light text-blue-1000 text-center"
+        >
+          Check In
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkin"
+            #checkIn
+            matInput
+            (click)="pickerIn.open()"
+            [matDatepicker]="pickerIn"
+            class="w-36 p-2 bg-black-100 outline-none flex-1"
+            type="text"
+            (dateChange)="dateChanged()"
+            readonly
+          />
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="pickerIn"
+            class="bg-black-100"
+          >
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerIn></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-auto">
+        <label
+          for="checkout"
+          class="text-lg mb-2 font-light text-blue-1000 text-center"
+        >
+          Check Out
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="checkout"
+            #checkOut
+            matInput
+            (click)="pickerOut.open()"
+            [matDatepicker]="pickerOut"
+            class="w-36 p-2 bg-black-100 outline-none flex-1"
+            type="text"
+            readonly
+          />
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="pickerOut"
+            class="bg-black-100"
+          >
+            <mat-icon matDatepickerToggleIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="23"
+                viewBox="0 0 21 23"
+              >
+                <g
+                  id="Icon_feather-calendar"
+                  data-name="Icon feather-calendar"
+                  transform="translate(-3 -1.5)"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M6.5,6h14a1.947,1.947,0,0,1,2,1.889V21.111A1.947,1.947,0,0,1,20.5,23H6.5a1.947,1.947,0,0,1-2-1.889V7.889A1.947,1.947,0,0,1,6.5,6Z"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_4"
+                    data-name="Path 4"
+                    d="M24,3V7.414"
+                    transform="translate(-6.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_5"
+                    data-name="Path 5"
+                    d="M12,3V7.414"
+                    transform="translate(-2.5)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                  <path
+                    id="Path_6"
+                    data-name="Path 6"
+                    d="M4.5,15h18"
+                    transform="translate(0 -4)"
+                    fill="none"
+                    stroke="#019ee3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #pickerOut></mat-datepicker>
+        </div>
+      </div>
+      <div class="my-auto mx-auto">
+        <label
+          for="adult"
+          class="text-lg mb-2 font-light text-blue-1000 text-center"
+        >
+          {{ 'home.adults.label' | translate }}
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="adult"
+            #adult
+            class="h-7 w-20 p-2 bg-black-100 outline-none flex-1"
+            type="number"
+            value="1"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('adult')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('adult')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-auto">
+        <label
+          for="kid"
+          class="text-lg mb-2 font-light text-blue-1000 text-center"
+        >
+          {{ 'home.kids.label' | translate }}
+        </label>
+        <div class="flex border-2 border-black-400 rounded-md">
+          <input
+            id="kid"
+            #kid
+            class="h-7 w-20 p-2 bg-black-100 outline-none flex-1"
+            type="number"
+            value="0"
+            disabled
+          />
+          <div class="flex flex-col justify-between py-1 px-1">
+            <button (click)="upValue('kid')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropup"
+                  data-name="Icon ionic-md-arrow-dropup"
+                  d="M9,22.5l9-9,9,9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+            <button (click)="downValue('kid')" class="bg-black-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="6"
+                viewBox="0 0 18 9"
+              >
+                <path
+                  id="Icon_ionic-md-arrow-dropdown"
+                  data-name="Icon ionic-md-arrow-dropdown"
+                  d="M9,13.5l9,9,9-9Z"
+                  transform="translate(-9 -13.5)"
+                  fill="#073959"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-auto mx-auto flex flex-col">
+        <a class="mx-auto" (click)="getLink()">
+          <button
+            class="
+              rounded-full
+              bg-blue-1000
+              text-black-100 text-base
+              font-bold
+              py-3
+              px-14
+            "
+          >
+            {{ 'home.button.name' | translate }}
+          </button>
+        </a>
+        <span class="text-red-500 mt-2 text-center" *ngIf="errorMsg != ''">{{
+          errorMsg
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>
